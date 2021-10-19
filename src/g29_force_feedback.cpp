@@ -59,7 +59,8 @@ G29ForceFeedback::G29ForceFeedback():
     m_max_force(1.0),
     m_min_force(0.2),
     m_pub_rate(0.1),
-    m_pid_mode(0)
+    m_pid_mode(1),
+    m_target_angle(0)
 {
     ros::NodeHandle n("~");
     sub_target = n.subscribe("/ff_target", 1, &G29ForceFeedback::targetCallback, this);
