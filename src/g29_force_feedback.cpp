@@ -61,7 +61,7 @@ G29ForceFeedback::G29ForceFeedback():
     m_pub_rate(0.1),
     m_pid_mode(0)
 {
-    ros::NodeHandle n;
+    ros::NodeHandle n("~");
     sub_target = n.subscribe("/ff_target", 1, &G29ForceFeedback::targetCallback, this);
 
     n.getParam("device_name", m_device_name);
